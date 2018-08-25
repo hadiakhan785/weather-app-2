@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/weather-icons-wind.css">
+    <link rel="stylesheet" href="css/weather-icons-wind.min.css">
+    <link rel="stylesheet" href="css/weather-icons.css">
+    <link rel="stylesheet" href="css/weather-icons.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script src="script.js"></script>
+</head>
+
+<body onload="initialize()">
+    <div class="container">
+        <h1>Cities Weather</h1>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control user-input" id="user-search" placeholder="Search City" title="enter city name" aria-label="Recipient's username"
+                aria-describedby="button-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="showWeather()">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="weather-info">
+            <h1 class="city-name"></h1>
+            <h3>
+                <span class="temp"></span>°</h3>
+            <h3 class="weather-icon"></h3>
+            <p class="weather-name"></p>
+            <p>
+                <span class="temp-min"></span>°/
+                <span class="temp-max"></span>°
+            </p>
+
+            <p>
+                <i class="wi wi-humidity"></i> Humidity:
+                <span class="humidity"></span>%
+            </p>
+
+            <p>
+                <i class="wi wi-cloudy"></i> Cloudiness:
+                <span class="cloudiness"></span>%
+            </p>
+
+            <p>
+                <i class="wi wi-strong-wind"></i> Wind:
+                <span class="wind"></span>m/s
+            </p>
+
+            <p>
+                <i class="wi wi-sunrise"></i> Sunrise:
+                <span class="sunrise-time"></span>
+                (Pakistan Standard Time)
+            </p>
+
+            <p>
+                <i class="wi wi-sunset"></i> Sunset:
+                <span class="sunset-time"></span>
+                (Pakistan Standard Time)
+            </p>
+
+            <p>Last Update
+                <span class="update-time"></span>
+                (Pakistan Standard Time)
+            </p>
+        </div>
+
+        <h3 class="error-message"></h3>
+    </div>
+</body>
+
+</html>
