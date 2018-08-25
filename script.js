@@ -12,7 +12,7 @@ function showWeather() {
     let cityName = document.querySelector(".user-input").value;
 
     $.ajax({
-        url: `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=2397c981714f508680c83f4e4d49a998&units=metric`,
+        url: `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=2397c981714f508680c83f4e4d49a998&units=metric`,
 
         success: function (data) {
             document.querySelector(".weather-info").style.display = "block";
