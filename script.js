@@ -125,5 +125,6 @@ function showWeather() {
             document.querySelector(".weather-info").style.display = `none`;            
             document.querySelector(".error-message").innerHTML = err.responseJSON.message;
         }
+        
     })
 }
