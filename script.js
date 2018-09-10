@@ -1,3 +1,10 @@
+let cities = ["Tbilisi", "Sukhumi", "Tkvarcheli", "Ochamchire", "Gali", "Gudauta", "Pitsunda", "Gagra", "New Athos", "Kabul",
+            "Kandahar", "Kunduz", "Herat", "Jalalabad", "Kandahar", "Tirana", "Durrës", "Shijak", "Ura Vajgurore", "Buenos Aires", "Formosa", "Mendoza",
+            "Sydney", "Canberra", "Bendigo", "	Vienna", "Graz", "Ismailli", "Quba", "Dhaka", "Rajshahi", "Gazipur", "Aalst", "Chiny", "São Paulo", "Hong Kong",
+            "Beijing", "Macau", "Shanghai", "Caucasia", "Alexandria", "Paris", "Veria"];
+
+
+
 function initialize() {
     $("#user-search").keyup(function (event) {
         if (event.keyCode === 13) {
@@ -11,10 +18,15 @@ function initialize() {
 function showWeather() {
     let cityName = document.querySelector(".user-input").value;
 
+    $('.spinner').show();
+
     $.ajax({
         url: `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=2397c981714f508680c83f4e4d49a998&units=metric`,
 
         success: function (data) {
+
+            $('.spinner').hide();
+
             document.querySelector(".weather-info").style.display = "block";
             document.querySelector(".error-message").style.display = `none`;
             document.querySelector(".city-name").innerHTML = data.name;
@@ -32,13 +44,13 @@ function showWeather() {
             let sunsetTime = new Date(data.sys.sunset * 1000);
 
             if (calcTime > sunriseTime && calcTime < sunsetTime) {
-                document.querySelector("body").style.background = `linear-gradient(to bottom, yellow, orange)`;
+                document.querySelector("body").style["background-image"] = `url(day-bg.jpg)`;
                 document.querySelector("body").style["background-position"] = `bottom`;
                 document.querySelector("body").style["background-attachment"] = `fixed`;
                 document.querySelector("body").style.color = `black`;
 
             } else {
-                document.querySelector("body").style.background = `linear-gradient(to bottom, blue, black)`;
+                document.querySelector("body").style["background-image"] = `url(night-bg-2.jpg)`;
                 document.querySelector("body").style["background-position"] = `bottom`;
                 document.querySelector("body").style["background-attachment"] = `fixed`;
                 document.querySelector("body").style.color = `white`;
@@ -120,11 +132,14 @@ function showWeather() {
         },
 
         error: function (err) {
+            $('.spinner').hide();
+            
             document.querySelector(".error-message").style.display = `block`;
-            document.querySelector("body").style.background = `linear-gradient(to bottom, red, white)`;
+            document.querySelector("body").style["background-image"] = `url(error-bg.jpg)`;
             document.querySelector(".weather-info").style.display = `none`;
             document.querySelector(".error-message").innerHTML = err.responseJSON.message;
+            document.querySelector("body").style.color = `white`;
         }
-        
+
     })
 }

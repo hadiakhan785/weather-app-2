@@ -3,16 +3,17 @@ body, html{
 }
 
 body {
-    background-color: #3498db;
+    background-image: url(main-bg.jpg) ;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
+    background-size: cover;
     
 }
 
 h1{
     text-align: center;
     margin-top: 8px;
+    color: aliceblue;
 }
 
 .container {
@@ -28,9 +29,26 @@ h1{
     min-width: 250px;
 }
 
+.spinner{
+    display: none;
+    height: 50px;
+    width: 50px;
+    background-image: url('loading-gif-png-1.gif');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 30%;
+    z-index: 5;
+}
+
 .weather-info {
     display: none;
     text-align: center;
+    background-color: rgba(0,0,0,0.1);
+    /* width: 100%; */
+    padding: 10px;
+    border-radius: 8px;
 }
 
 .weather-info > p{
@@ -49,6 +67,7 @@ h3{
 .error-message {
     text-align: center;
     display: none;
+    text-transform: capitalize;
 }
 
 .city-name {
@@ -60,3 +79,4 @@ h3{
     color: black;
     border-color: black;
 }
+
