@@ -21,6 +21,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
         crossorigin="anonymous">
+
+
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     <script src="script.js"></script>
     <title>Weather App</title>
@@ -41,7 +47,7 @@
         </div>
 
         <div class="spinner">
-            
+
         </div>
 
         <div class="weather-info">
@@ -50,27 +56,36 @@
                 <span class="temp"></span>°</h3>
             <h3 class="weather-icon"></h3>
             <p class="weather-name"></p>
+            <p class="update-detail">
+                <strong>Last Update:</strong>
+                <span class="update-time"></span>
+                (PST)
+            </p>
             <p>
-                <strong>Min:</strong>
+                <strong>
+                    <i class="wi wi-direction-down"></i>
+                </strong>
                 <span class="temp-min"></span>°/
-                <strong>Max:</strong>
+                <strong>
+                    <i class="wi wi-direction-up"></i>
+                </strong>
                 <span class="temp-max"></span>°
             </p>
 
             <p>
-                <i class="wi wi-humidity"></i> 
+                <i class="wi wi-humidity"></i>
                 <strong>Humidity:</strong>
                 <span class="humidity"></span>%
             </p>
 
             <p>
-                <i class="wi wi-cloudy"></i> 
+                <i class="wi wi-cloudy"></i>
                 <strong>Cloudiness:</strong>
                 <span class="cloudiness"></span>%
             </p>
 
             <p>
-                <i class="wi wi-strong-wind"></i> 
+                <i class="wi wi-strong-wind"></i>
                 <strong>Wind:</strong>
                 <span class="wind"></span>m/s
             </p>
@@ -79,21 +94,17 @@
                 <i class="wi wi-sunrise"></i>
                 <strong>Sunrise:</strong>
                 <span class="sunrise-time"></span>
-                (Pakistan Standard Time)
+                (PST)
             </p>
 
             <p>
                 <i class="wi wi-sunset"></i>
                 <strong>Sunset:</strong>
                 <span class="sunset-time"></span>
-                (Pakistan Standard Time)
+                (PST)
             </p>
 
-            <p>
-                <strong>Last Update:</strong>
-                <span class="update-time"></span>
-                (Pakistan Standard Time)
-            </p>
+            
         </div>
 
         <h3 class="error-message"></h3>

@@ -6,11 +6,22 @@ let cities = ["Tbilisi", "Sukhumi", "Tkvarcheli", "Ochamchire", "Gali", "Gudauta
 
 
 function initialize() {
+    
+    $(function(){
+        $("#user-search").autocomplete({
+            source: cities,
+            autoFocus: true
+        });
+    });
+    
+    
     $("#user-search").keyup(function (event) {
         if (event.keyCode === 13) {
             $("#button-addon2").click();
         }
     });
+
+
 
 }
 

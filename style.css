@@ -51,13 +51,17 @@ h1{
     border-radius: 8px;
 }
 
-.weather-info > p{
+.weather-info > p:not(.weather-name){
     border-bottom: 1px solid white;
     padding-bottom: 8px;
 }
 
 .weather-name {
     font-size: 2em;
+}
+
+.update-detail{
+    font-size: 9px;
 }
 
 h3{
