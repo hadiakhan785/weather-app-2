@@ -1,6 +1,6 @@
 # weather-app-2
 
-It shows weather infromation of worldwide cities when user search city name.
+It shows weather information of worldwide cities when user search city name.
 
 ## Languages and Tools
 - HTML 
